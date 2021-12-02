@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; child-src 'none'; object-src 'none'">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/sheets/home.css">
+    <title>YelpCamp</title>
+</head>
+
+<body class="d-flex text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">YelpCamp</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/camp" class="nav-link">Campgrounds</a>
+                    <% if(!currentUser) { %>
+                    <a href="/register" class="nav-link">Signup</a>
+                    <a href="/login" class="nav-link">Login</a>
+                    <% } else { %>
+                    <a href="/logout" class="nav-link">Logout</a>
+                    <% } %>
+                </nav>
+            </div>
+        </header>
+        <main class="px-3">
+            <h1>YelpCamp</h1>
+            <p class="lead">Welcome to YelpCamp! <br> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo
+                quas, animi vitae at
+                praesentium, amet aspernatur iure sapiente rem quis quidem inventore. Dolorem saepe quasi ut quae?
+                Nulla, vitae alias.</p>
+
+            <a href="/camp" class="btn btn-lg btn-secondary text-white font-weight-bold bg-white">View Campgrounds</a>
+        </main>
+
+        <footer class="mt-auto text-white-50">
+            <p>&copy; 2021 YelpCamp</p>
+        </footer>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

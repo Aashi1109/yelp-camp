@@ -1,0 +1,37 @@
+#delete {
+            /* height: 2rem; */
+            color: red;
+        }
+
+        #delete:hover {
+            color: white;
+            background-color: red;
+        }
+
+        #delete:hover::after {
+            content: ' Delete'
+        }
+
+        /* #deleteForm {
+            display: inline;
+        } */
+
+.thumbnail {
+    height: 60px;
+    width: 100px;
+}
+
+.img-container { position: relative; width: 100px; height: 60px; float: left; margin-left: 10px; }
+.img-checkbox { position: absolute; bottom: 0px; right: 0px; }
+
+/* #map { position: absolute; top: 0; bottom: 0; width: 100%; } */
+
+#cluster-map {
+    max-width: 100%; 
+    height: 500px;
+}
+
+#map {
+    width: 100%; 
+    height: 300px;
+}

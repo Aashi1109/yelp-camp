@@ -1,0 +1,80 @@
+<% layout('layouts/base') %>
+
+    <div class="row">
+        <h1 class="text-center">Edit <a href="/camp/details/<%= camp._id%>">
+                <%= camp.title %>
+            </a> Camp</h1>
+        <div class="col-6 offset-3">
+            <form action="/camp/update/<%=camp._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Camp name</label>
+                    <input class="form-control" type="text" id="title" name='camp[title]' value="<%= camp.title %> ">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Camp location</label>
+                    <input class="form-control" type="text" id="location" name='camp[location]'
+                        value="<%= camp.location %> ">
+                </div>
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <label class="form-label" for="price">Campground price</label>
+                    </div>
+                    <div class="col-sm-4 col-md">
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+                                name='camp[price]' value="<%= camp.price %> ">
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <h5>Images</h5>
+                    <div class="mb-3">
+
+                    </div>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-outline-success" id='addImage' for="image" type="button">Add new
+                            Image</button>
+                        <input class="d-none" type="file" id="hiddenImageInput" name='camp[image]' multiple>
+                        <!-- <button class="btn " type="button" id="selectImage">Button</button> -->
+                        <input type="text" class="form-control "
+                            placeholder="Selected image files will be displayed here"
+                            aria-label="Example text with button addon" aria-describedby="selectImage" id="filesDisplay"
+                            disabled>
+                        <span class="input-group-text d-none"></span>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary" id='campImages' type="button">Edit Camp Images</button>
+                    </div>
+                </div>
+                <div class="card my-3 d-none" id="showCampImages">
+                    <div class="card-header">
+                        <h5 class="card-title">Choose camp images to delete</h5>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <% camp.images.map((img, i)=> {%>
+                                <div class="img-container">
+                                    <label for="img-<%= i %>"><img src="<%= img.thumbnail %> "
+                                            class="thumbnail" /></label>
+                                    <input type="checkbox" class="img-checkbox form-check-input" id="img-<%= i %>"
+                                        value="<%= img._id %>" name="deleteImages[]" />
+                                </div>
+                                <% }) %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="title">Enter camp description</label>
+                    <textarea class="form-control" id="title" name='camp[description]' cols='10' rows="3"
+                        placeholder="Describe the Camp"><%= camp.description %></textarea>
+                </div>
+                <button class="btn btn-info mb-3">Update Campground</button>
+
+            </form>
+            <a href="/camp/details/<%= camp._id %>">Back to Campground</a>
+        </div>
+    </div>
+    </div>

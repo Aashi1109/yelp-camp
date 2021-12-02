@@ -1,0 +1,65 @@
+<% layout('layouts/base') %>
+    <div class="row">
+        <h1 class="text-center">New Campground</h1>
+        <div class="col-6 offset-3">
+            <form action="/camp/save" method="POST" novalidate class='validate-form' enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label" for="title">Camp name</label>
+                    <input class="form-control" type="text" id="title" name='camp[title]' placeholder="Name of Camp"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Camp location</label>
+                    <input class="form-control" type="text" id="location" name='camp[location]' placeholder="Location"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="row align-items-center mb-3">
+                    <div class="col-auto">
+                        <label class="form-label" for="price">Campground price</label>
+                    </div>
+                    <div class="col-sm-4 col-md">
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+                                name='camp[price]' required>
+                            <span class="input-group-text">.00</span>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- <div class="mb-3"> -->
+                <!-- <label class="form-label" for="price">Image URL</label>
+                    <input class="form-control" type="text" id="price" name='camp[image]' placeholder="URL" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div> -->
+                <!-- <label for="avatar">Choose image file</label>
+                    <input type="file" name="camp[image]" id="avatar" accept="image/png image/jpeg" multiple>
+                </div> -->
+                <div class="mb-3">
+                    <label class="form-label" for="image">Camp Images</label>
+                    <input class="form-control" type="file" id="image" name='camp[image]' multiple>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="title">Enter camp description</label>
+                    <textarea class="form-control" id="title" name='camp[description]' cols='10' rows="3"
+                        placeholder="Describe the Camp" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button class="btn btn-success mb-3">Register Campground</button>
+
+            </form>
+            <a href="/camp">Back to Homepage</a>
+        </div>
+    </div>

@@ -1,0 +1,38 @@
+<% layout('layouts/base') %>
+<div class="w-100" id="cluster-map"></div>
+<h1>All Camps in Yelp-Camp</h1>
+<!-- <br>
+    <!-- <a href="/new">Add new Camp</a> -->
+<!-- <br> -->
+<% for (let camp of camps) { %>
+<div class="card mb-2">
+    <div class="row">
+        <div class="col-md-4">
+            <img class='img-fluid' src="<%= camp.images[0].url %> " alt="">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= camp.title %>
+                </h5>
+                <p class="card-text">
+                    <%= camp.description %>
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">
+                        <%= camp.location %>
+                    </small>
+                </p>
+                <a href="/camp/details/<%= camp._id %>" class="btn btn-primary">View <%= camp.title %> </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<% } %>
+<script>
+    const mapboxToken='<%-process.env.MAPBOX_PUBLIC_TOKEN%>'
+    const camps={ features: <%-JSON.stringify(camps)%>}
+</script>
+
+<script src="/scripts/clusterMap.js"></script>

@@ -1,0 +1,34 @@
+<% layout('layouts/base') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4 mb-3">
+            <div class="card shadow">
+                <img src="https://images.unsplash.com/photo-1528892677828-8862216f3665?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FtcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                    alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <form action="/login" method="POST" class="validate-form" novalidate>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" autofocus required>
+                            <div class="valid-feedback">
+                                Looks Good
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                            <div class="valid-feedback">
+                                Looks Good
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-success">Log in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
